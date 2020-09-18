@@ -20,8 +20,6 @@ void PMS_Sensor::begin() {
 
 #define PMS_READ_DELAY 1000
 
-static tick_t lastRead = millis();
-
 void PMS_Sensor::handle() {
   const auto now = millis();
 
