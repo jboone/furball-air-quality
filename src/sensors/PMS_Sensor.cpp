@@ -21,7 +21,7 @@ void PMS_Sensor::begin() {
 #define PMS_READ_DELAY 1000
 
 void PMS_Sensor::handle() {
-  const auto now = millis();
+  const tick_t now = millis();
 
   if(now - _last_read_request < PMS_READ_DELAY) {
     return;
