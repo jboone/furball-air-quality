@@ -36,9 +36,8 @@ void PMS_Sensor::handle() {
   case Pmsx003::OK: {
 #ifdef VERBOSE
     Serial.println("_________________");
-    auto newRead = millis();
     Serial.print("Wait time ");
-    Serial.println(newRead - _last_read_request);
+    Serial.println(now - _last_read_request);
 
     // For loop starts from 3
     // Skip the first three data (PM1dot0CF1, PM2dot5CF1, PM10CF1)
