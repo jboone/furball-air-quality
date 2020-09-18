@@ -23,7 +23,9 @@ void PMS_Sensor::begin() {
 static tick_t lastRead = millis();
 
 void PMS_Sensor::handle() {
-  if(millis() - _last_read_request < PMS_READ_DELAY)
+  const auto now = millis();
+  
+  if(now - _last_read_request < PMS_READ_DELAY)
     return;
 
     const auto n = Pmsx003::Reserved;
@@ -66,5 +68,5 @@ void PMS_Sensor::handle() {
       Serial.println(Pmsx003::errorMsg[status]);
     };
 
-    _last_read_request = millis();
+    _last_read_request = now;
 }
