@@ -8,7 +8,7 @@
 
 class PMS_Sensor : public Sensor {
  public:
-  PMS_Sensor(uint16_t update_frequency, uint16_t accuracy, uint16_t precision, boolean calibrated) : Sensor(update_frequency, accuracy, precision, calibrated) {};
+  PMS_Sensor(tick_t update_frequency, uint16_t accuracy, uint16_t precision, boolean calibrated) : Sensor(update_frequency, accuracy, precision, calibrated) {};
 
   void begin(HardwareSerial);
   void begin();
@@ -25,5 +25,5 @@ class PMS_Sensor : public Sensor {
   uint16_t _density_2_5;
   uint16_t _density_10_0;
 
-  uint32_t _last_read_request = 0;
+  tick_t _last_read_request = 0;
 };

@@ -9,7 +9,7 @@ class TSL2561_Sensor : public Sensor {
  public:
   //  TSL2561_Sensor(uint16_t update_frequency, uint16_t accuracy, uint16_t precision, boolean calibrated) : _tsl2561(0x39, TSL2561_PACKAGE_T_FN_CL), Sensor(update_frequency, accuracy, precision, calibrated) {};
 
-  TSL2561_Sensor(uint16_t update_frequency, uint16_t accuracy, uint16_t precision, boolean calibrated) : Sensor(update_frequency, accuracy, precision, calibrated) {};
+  TSL2561_Sensor(tick_t update_frequency, uint16_t accuracy, uint16_t precision, boolean calibrated) : Sensor(update_frequency, accuracy, precision, calibrated) {};
 
   void begin();
   void handle();

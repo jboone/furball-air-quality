@@ -20,7 +20,7 @@ void PMS_Sensor::begin() {
 
 #define PMS_READ_DELAY 1000
 
-static auto lastRead = millis();
+static tick_t lastRead = millis();
 
 void PMS_Sensor::handle() {
   if(millis() - _last_read_request < PMS_READ_DELAY)

@@ -7,7 +7,7 @@
 
 class BME680_Sensor : public Sensor {
  public:
-  BME680_Sensor(uint16_t update_frequency, uint16_t accuracy, uint16_t precision, boolean calibrated) : Sensor(update_frequency, accuracy, precision, calibrated) {};
+  BME680_Sensor(tick_t update_frequency, uint16_t accuracy, uint16_t precision, boolean calibrated) : Sensor(update_frequency, accuracy, precision, calibrated) {};
 
   void begin();
   void handle();

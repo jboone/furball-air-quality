@@ -242,7 +242,7 @@ static void (*screen_handlers[])() = {
 
 void display_loop() {
   static int current_screen_index = -1;
-  static unsigned long next_screen_change = 0;
+  static tick_t next_screen_change = 0;
 
   if(millis() > next_screen_change) {
     next_screen_change = millis() + DISPLAY_SCREEN_INTERVAL;

@@ -2,9 +2,11 @@
 
 #include <Arduino.h>
 
+using tick_t = unsigned long;
+
 class Sensor {
  public:
- Sensor(uint16_t update_frequency, uint16_t accuracy, uint16_t precision, boolean calibrated) : _update_frequency(update_frequency), _accuracy(accuracy), _precision(precision), _calibrated(calibrated) { };
+ Sensor(tick_t update_frequency, uint16_t accuracy, uint16_t precision, boolean calibrated) : _update_frequency(update_frequency), _accuracy(accuracy), _precision(precision), _calibrated(calibrated) { };
 
   virtual void begin();
   virtual void handle();
@@ -51,7 +53,7 @@ class Sensor {
 
   enum sensor_status _status;
 
-  uint16_t _update_frequency = 0;
+  tick_t _update_frequency = 0;
   
   uint16_t _burn_in_time = 0;
   uint16_t _run_in_time = 0;
@@ -60,7 +62,7 @@ class Sensor {
   uint16_t _precision = 0;
   boolean _calibrated = false;
 
-  uint32_t _last_checked = 0;
+  tick_t _last_checked = 0;
 
   boolean _present = false;
 };

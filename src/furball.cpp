@@ -227,7 +227,7 @@ static boolean furball_diagnostic_update(char* buf, size_t buf_len) {
 
 
 void furball_loop() {
-  static unsigned long next_loop = 0;
+  static tick_t next_loop = 0;
 
   display_loop();
 

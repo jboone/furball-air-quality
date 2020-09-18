@@ -8,7 +8,7 @@
 
 class ADS1115_Sensor : public Sensor {
  public:
-  ADS1115_Sensor(uint16_t update_frequency, uint16_t accuracy, uint16_t precision, boolean calibrated) : Sensor(update_frequency, accuracy, precision, calibrated) { _present = true; };
+  ADS1115_Sensor(tick_t update_frequency, uint16_t accuracy, uint16_t precision, boolean calibrated) : Sensor(update_frequency, accuracy, precision, calibrated) { _present = true; };
 
   void begin();
   void handle();
